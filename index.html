@@ -2,16 +2,25 @@
   <head>
     <h1>Good Morning</h1>
     <script>
-      window.dataLayer() = window.dataLayer || []
+      // JavaScript to capture the value of the username input
+    const usernameInput = document.getElementById('username');
+
+    usernameInput.addEventListener('input', (event) => {
+    const usernameValue = event.target.value;
+
+  // Push the username data to the data layer
+  window.dataLayer.push({
+    event: 'userInput',
+    inputType: 'username',
+    value: usernameValue,
+  });
+});
+
     </script>
   </head>
   <body>
   <form>
-  <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname"><br><br>
-  <label for="lname">Last name:</label>
-  <input type="text" id="lname" name="lname"><br><br>
-  <input type="submit" value="Submit" onclick = "dataLayer.push({"name" = document.getElementsByName("fname")})">
+  <input type="text" id="username" />
   </form>
   </body>
 </html>
